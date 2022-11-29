@@ -126,16 +126,11 @@ picture
     display: block;
 }
 
-.flow>*+*
-
-/*---*+*==*:not(:first-child)---*/
-    {
+.flow> * + *
+{
     margin-top: var(--flow-space, 1rem);
 }
 
-.flow--space-small {
-    --flow-space: .75rem;
-}
 .container 
 {
     padding-inline: 2em;
