@@ -1,0 +1,319 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500&display=swap');
+@font-face 
+{
+    font-family: 'digital-7regular';
+    src: url('digital-7-webfont.woff2') format('woff2'),
+        url('digital-7-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+:root 
+{
+    /* colors */
+    --clr-dark: 240 89% 14%;
+    --clr-light: 235 52% 36%;
+    --clr-white: 0 0% 100%;
+    --clr-accent: 359 100% 35%;
+
+    /* font-sizes */
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-p: 1rem;
+
+    /* font weights */
+    --fw-light:200;
+    --fw-reg:300;
+    --fw-bold:500;
+    
+    /* font families */
+    --ff-primary:'Montserrat', sans-serif;
+    --ff-secondary:'digital-7regular';
+}
+@media (min-width:35em) 
+{
+    :root {
+        --fs-h1: 3.75rem;
+        --fs-h2: 2.5rem;
+        --fs-h3: 1.3rem;
+        --fs-p: 1.1rem;
+
+    }
+
+}
+
+@media (min-width:45em) 
+{
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 2rem;
+        --fs-h3: 1.5rem;
+        --fs-p: 1.125rem;
+
+    }
+}
+/*-----------------*/
+/* Reset           */
+/*-----------------*/
+
+/* Box-sizing */
+*,
+*::before,
+*::after 
+{
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture 
+{
+    margin: 0;
+}
+/* Reset paddings */ 
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture 
+{
+    padding: 0;
+}
+/* set up the body */
+body 
+{
+    background-color: hsl(var(--clr-dark));
+    color: hsl(var(--clr-white));
+    font-family: var(--ff-primary);
+    font-size: var(--fs-p);
+    line-height: 1.5;
+    min-height: 100vh;
+    position: relative;
+}
+/* make images easier to work with */
+img,
+picture 
+{
+    max-width: 100%;
+    display: block;
+}
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+/* general */
+.flex 
+{
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+.d-block 
+{
+    display: block;
+}
+
+.flow>*+*
+
+/*---*+*==*:not(:first-child)---*/
+    {
+    margin-top: var(--flow-space, 1rem);
+}
+
+.flow--space-small {
+    --flow-space: .75rem;
+}
+.container 
+{
+    padding-inline: 2em;
+    margin-inline: auto;
+    margin-top: 2.5rem;
+    max-width: 80rem;
+}
+/* colors */
+
+.bg-dark { background-color: hsl( var(--clr-dark) );}
+.bg-light {background-color: hsl(var(--clr-light));}
+.bg-accent {background-color: hsl(var(--clr-accent));}
+.bg-white {background-color: hsl(var(--clr-white));}
+
+.text-dark {color: hsl(var(--clr-dark));}
+.text-light {color: hsl(var(--clr-light));}
+.text-accent {color: hsl(var(--clr-accent));}
+.text-white{color: hsl(var(--clr-white));}
+
+/* typography */
+
+.ff-primary { font-family: var(--ff-primary); }
+.ff-secondary { font-family: var(--ff-secondary); }
+
+
+.uppercase { text-transform: uppercase; }
+
+.fs-h1{font-size: var(--fs-h1);}
+.fs-h2{font-size: var(--fs-h2);}
+.fs-h3{font-size: var(--fs-h3);}
+.fs-p{font-size: var(--fs-p);}
+
+
+.fw-light{font-weight: var(--fw-light);}
+.fw-reg{font-weight: var(--fw-reg);}
+.fw-bold{font-weight: var(--fw-bold);}
+
+.fs-h1,
+.fs-h2,
+.fs-h3 
+{
+    line-height: 1;
+}
+/* ------------------- */
+/* Components          */
+/* ------------------- */
+/* Header */
+.header
+{
+
+    justify-content: space-between;
+    align-items: center;
+}
+.logo 
+{
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+}
+.logo::after
+{
+    content: "";
+    position: absolute;
+    width: 4.5rem;
+    height: 2px;
+    bottom: -1rem;
+    left: 0;
+    background-color: hsl( var(--clr-light) );
+}
+/* Main */
+.scoreboard
+{
+    --flow-space:4rem;
+    max-width: 800px;
+    margin-inline: auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    border-radius: 5px;
+    flex-direction: column;
+    position: relative;
+}
+.scoreboard::after
+{
+    content: "";
+    position: absolute;
+    background-image: url(images/img01.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 10em;
+    height: 10em;
+    top: 0;
+    left: -4em;
+    transform: rotate(15deg);
+}
+@media (min-width:45em) 
+{
+    .scoreboard::after 
+    {
+        content: "";
+        position: absolute;
+        background-image: url(images/img01.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 20em;
+        height: 20em;
+        bottom: 5em;
+        left: -10em;
+        filter: drop-shadow(100px 10px 4px rgba(0, 0, 0, 0.5));
+        transform: rotate(15deg);
+    }
+
+}
+.scoreboard__home,
+.scoreboard__guest
+{
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.scoreboard__home > span,
+.scoreboard__guest> span
+{
+    margin-top: 1rem;
+    height: 90px;
+    width: 120px;
+    border-radius: 5px;
+    margin-inline: auto;
+    padding: 1rem;
+    text-align: center;
+}
+.btn-container
+{
+    margin-top: 2rem;
+    text-align: center;
+    justify-content: center;
+    margin-inline: auto;
+}
+.btn 
+{
+    border: none;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+@media (min-width: 45em) 
+{
+.scoreboard {
+        max-width: 800px;
+        margin-inline: auto;
+        justify-content: space-between;
+        padding: 2rem 4rem;
+        border-radius: 5px;
+        flex-direction: row;
+
+    }
+    .scoreboard__home>span,
+    .scoreboard__guest>span {
+        margin-top: 1rem;
+        height: 110px;
+        width: 140px;
+        border-radius: 5px;
+        margin-inline: auto;
+        padding: 1rem;
+        text-align: center;
+    }
+    
+}
+
+.reset-container
+{
+    text-align: center;
+}
+.btn-reset 
+{
+    width: 80px;
+}

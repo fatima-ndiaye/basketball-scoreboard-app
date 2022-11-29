@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+        <title>Scoreboard</title>
+    </head>
+    <body>
+        <header class="header container flex">
+            <div class="logo bg-light"></div>
+            <p class="ff-primary text-white">Scoreboard</p>
+        </header>
+        <main class="container test flow">
+            <h1 class="fs-h1 fw-reg">Basketball Scoreboard</h1>
+            <div class="scoreboard bg-light flex">
+                <div class="scoreboard__home">
+                    <h2 class="fs-h2 ff-primary uppercase fw-light">Home</h2>
+                    <span id="home-score" class="d-block bg-dark text-accent fw-bold ff-secondary fs-h1">0</span>
+                    <div class="btn-container flex">
+                        <button class="btn ff-secondary bg-dark text-white" onclick="addOneHome()">+1</button>
+                        <button class="btn ff-secondary bg-dark text-white" onclick="addTwoHome()">+2</button>
+                        <button class="btn ff-secondary bg-dark text-white" onclick="addThreeHome()">+3</button>
+                    </div>
+                </div>
+                <div class="scoreboard__guest">
+                    <h2 class="fs-h2 ff-primary uppercase fw-light">Guest</h2>
+                    <span id="guest-score" class="d-block bg-dark text-accent fw-bold ff-secondary fs-h1">0</span>
+                    <div class="btn-container flex">
+                        <button class="btn ff-secondary bg-dark text-white" onclick="addOneGuest()">+1</button>
+                        <button class="btn ff-secondary bg-dark text-white" onclick="addTwoGuest()">+2</button>
+                        <button class="btn ff-secondary bg-dark text-white" onclick="addThreeGuest()">+3</button>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="reset-container">
+                <button class="btn bg-white text-dark btn-reset" onclick="reset()" aria-label="reset"><i class="ri-restart-line"></i></button>
+
+            </div>
+        </main>
+        
+
+        <script src="index.js"></script>
+    </body>
+
+</html>
